@@ -5,6 +5,7 @@ import jsonServerProvider from "ra-data-json-server";
 import fakeDataProvider from 'ra-data-fakerest';
 import { LogList } from "./LogList";
 import authProvider from "@/authProvider";
+import { LogEdit } from "./LogListEdit";
 
 const dataProvider = fakeDataProvider({
     logs: [
@@ -104,7 +105,7 @@ const AdminApp = () => (
         <Resource
             name="logs"
             list={LogList}
-            edit={EditGuesser}
+            edit={LogEdit}
             recordRepresentation="id"
         />
         {/* <Resource

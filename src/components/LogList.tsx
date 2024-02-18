@@ -1,6 +1,7 @@
 import { Dialog, DialogContent, DialogTitle } from '@mui/material';
 import { useState } from 'react';
 import { useListContext, DateField, List, TextField, DatagridConfigurable, TopToolbar, SelectColumnsButton, CreateButton, ExportButton, BulkUpdateButton, BulkDeleteButton, SimpleForm, TextInput, Button, useUpdateMany, useNotify, SearchInput, FilterButtonMenuItem } from 'react-admin';
+import { LogEdit } from './LogListEdit';
 
 
 const BulkEditForm = () => {
@@ -69,6 +70,8 @@ export const LogList = () => {
                 </DialogContent>
             </Dialog>
             <DatagridConfigurable
+                rowClick="edit"
+
                 bulkActionButtons={
                     <>
                         <Button label="Bulk Edit" onClick={handleShowBulkEditForm} />
@@ -79,7 +82,7 @@ export const LogList = () => {
                 <TextField source="host_name" />
                 <TextField source="ip" />
                 <TextField source="os" />
-                <DateField source="timestamp" />
+                <DateField source="timestamp" itemType='datetime' />
                 <TextField source="location" />
                 <TextField source="owner" />
                 <TextField source="id" />
